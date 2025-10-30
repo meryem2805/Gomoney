@@ -2,35 +2,57 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="src/output.css" />
-  <title>Gomoney</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gomoney - Simulation de prêt</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white-500">
-  <div  class=" absoluteflex justify-items-center justify-center flex-col t-[20px] ">
-  <img class="  " src="photos/logo.png" alt="">
-  <h1 class="text-green-500 text-3xl font-bold p-4">Gomoney</h1>
-  <p class="text-center" >Réalisez vos rêves en toute sérénité.<br> Simulez votre prêt et trouvez la solution qui vous correspond.</p>
-</div>
-<div class="border-2 border-black rounded-3xl p-8 w-[800px]   ">
-<h1 class="text-center">Parlons de votre projet</h1>
-<form class=" justify-self-center flex  w-[800px] h-[600px] flex-col">
-    <label for="type">Quel est votre projet ?</label>
-    <select id="type">
-        <option> Maison</option>
-        <option> Appartement</option>
-        <option> Terrain</option>
-        <option> Petite Entreprise</option>
-        <option> Prêt Personnel</option>
-    </select>
-    <label for="montant">De quel montant avez-vous besoin ?</label>
-    <input type="number">
-    <label for="duree">Sur combien de temps souhaitez-vous rembourser ?</label>
-    <input type="number">
-    <label for="salaire">Quel est votre revenu mensuel ?</label>
-    <input type="number">
-</form>
-</div>
+<body class="bg-white h-screen flex flex-col items-center justify-start py-10">
+  <div class="text-center mb-8">
+    <img src="photos/logo.png" alt="" class="mx-auto w-24 h-24 rounded-full mb-2" />
+    <h1 class="text-2xl font-extrabold text-green-500">Gomoney</h1>
+    <p class="text-slate-950 mt-2">
+      Réalisez vos rêves en toute sérénité.<br> Simulez votre prêt et trouvez la solution qui vous correspond.
+    </p>
+  </div>
+  <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-2xl">
+    <h2 class="text-xl font-semibold mb-4 text-slate-950">Parlons de votre projet</h2>
+    <p class="text-sm text-red-500 mb-6">
+      Prenez le temps de remplir ces informations, nous sommes là pour vous aider.
+    </p>
+    <label class="block text-slate-950 font-medium mb-2">Quel est votre projet ?</label>
+    <div class="grid grid-cols-3 gap-6 mb-6">
+      <button class="loanType border rounded-lg p-4 hover:bg-green-50 flex flex-col items-center" data-type="Maison">
+        <img src="photos/maison.png" alt="Maison" class="w-10 h-10 mb-2" />
+        <span>Maison</span>
+      </button>
+      <button class="loanType border rounded-lg p-4 hover:bg-green-50 flex flex-col items-center" data-type="Appartement">
+        <img src="photos/appartement.png" alt="Appartement" class="w-10 h-10 mb-2" />
+        <span>Appartement</span>
+      </button>
+      <button class="loanType border rounded-lg p-4 hover:bg-green-50 flex flex-col items-center" data-type="Terrain">
+        <img src="photos/broche-de-localisation (1).png" alt="Terrain" class="w-10 h-10 mb-2" />
+        <span>Terrain</span>
+      </button>
+    </div>
+    <div class="flex justify-center gap-6 mb-6">
+      <button class="loanType border rounded-lg p-4 hover:bg-green-50 flex flex-col items-center min-w-[120px]" data-type="Petite entreprise">
+        <img src="photos/cartable.png" alt="Petite Entreprise" class="w-10 h-10 mb-2" />
+        <span>Petite Entreprise</span>
+      </button>
+      <button class="loanType border rounded-lg p-4 hover:bg-green-50 flex flex-col items-center min-w-[120px]" data-type="Prêt personnel">
+        <img src="photos/argent.png" alt="Prêt Personnel" class="w-10 h-10 mb-2" />
+        <span>Prêt Personnel</span>
+      </button>
+    </div>
+    <label for="montant" class="block text-slate-950 font-medium mb-2">De quel montant avez-vous besoin ?</label>
+    <input type="number" id="montant" placeholder="Montant en Dhs" class="w-full border rounded-lg p-2 mb-6 focus:outline-none focus:ring-2 focus:ring-green-500">
+    <label for="duree" class="block text-slate-950 font-medium mb-2">Sur combien de temps souhaitez-vous rembourser ?</label>
+    <input type="number" id="duree" placeholder="Durée en années" class="w-full border rounded-lg p-2 mb-6 focus:outline-none focus:ring-2 focus:ring-green-500">
+    <label for="revenu" class="block text-slate-950 font-medium mb-2">Quel est votre revenu mensuel ?</label>
+    <input type="number" id="revenu" placeholder="Revenu en Dhs" class="w-full border rounded-lg p-2 mb-6 focus:outline-none focus:ring-2 focus:ring-green-500">
+    <button id="simulateBtn" class="w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition">Découvrir mon plan de financement </button>
+  </div>
 </body>
 </html>
+
 
